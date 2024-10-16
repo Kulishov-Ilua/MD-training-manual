@@ -99,7 +99,8 @@ fun ScaffoldExample() {
 }
 
 ```
-![[Pasted image 20241015123358.png]]
+![Pasted image 20241015123358](https://github.com/user-attachments/assets/4755a4b4-6f51-4dc3-9cb7-f3cdc69ed615)
+
 Рисунок 1 - Пример реализации интерфейса с помощью Scaffold
 [Подробнее про Scaffold](https://developer.android.com/develop/ui/compose/components/scaffold?hl=ru)
 # 3. Bottom Navigation
