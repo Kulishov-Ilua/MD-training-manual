@@ -53,8 +53,8 @@ fun FilledButtonExample() {
 [Подробнее про кнопки](https://developer.android.com/develop/ui/compose/components/button?hl=ru)
 # 4. TextField (isError)
 В качестве параметров [[Методичка к лр 1 (kotlin+compose)#^0d76f3|TextField]] можно передавать состояние `isError` если состояние `isError = true`, то форма будет выделена как ошибка (рис.1).
-![Pasted image 20241013203926](https://github.com/user-attachments/assets/a6916524-58af-499d-bb1b-98fb78413883)
 
+![Pasted image 20241013203926](https://github.com/user-attachments/assets/a6916524-58af-499d-bb1b-98fb78413883)
 							Рисунок 1 – Состояние ошибки
 Пример реализации:
 ```kotlin
