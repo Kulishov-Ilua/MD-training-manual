@@ -53,7 +53,8 @@ fun FilledButtonExample() {
 [Подробнее про кнопки](https://developer.android.com/develop/ui/compose/components/button?hl=ru)
 # 4. TextField (isError)
 В качестве параметров [[Методичка к лр 1 (kotlin+compose)#^0d76f3|TextField]] можно передавать состояние `isError` если состояние `isError = true`, то форма будет выделена как ошибка (рис.1).
-![[Pasted image 20241013203926.png]]
+![Pasted image 20241013203926](https://github.com/user-attachments/assets/a6916524-58af-499d-bb1b-98fb78413883)
+
 							Рисунок 1 – Состояние ошибки
 Пример реализации:
 ```kotlin
@@ -72,7 +73,8 @@ fun SimpleFilledTextFieldSample() {
 
 # 5. Работа с массивом строк в ресурсах
 Для начала создадим массив строк в ресурсах. Для этого создадим файл ресурсов в директории `values`(рис.2)
-![[Pasted image 20241013204551.png]]
+![Pasted image 20241013204551](https://github.com/user-attachments/assets/2d9c0885-6490-43e2-839e-841e7c77b60d)
+
 							Рисунок 2 – Создания файла ресурсов
 Пример заполнения массива строк:
 ```xml
