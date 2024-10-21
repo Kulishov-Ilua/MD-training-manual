@@ -112,15 +112,15 @@ fun main() {
 
 Однопоточные программы имеют недостатки в случаях, когда требуется обработка различных данных событий и выполнение блокирующих задач.
 В `Android` приложение живет в одном или более процессах, каждый из которых содержит основной поток `Main thread`. Только он отвечает за отрисовку `UI`. Помимо этого, он отвечает за обработку пользовательских действий, и запуск основных компонентов (рис.1).
-![[Pasted image 20240903202531.png]]
+![Pasted image 20240903202531](https://github.com/user-attachments/assets/7a6085c7-bfe2-4b57-bc59-34ad2c92b62c)
+
 [Рисунок 1](https://yandex.ru/video/preview/8830654701698806592?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024) - Main Thread 
 Помимо этого, основной поток может выполнять и другие задачи, но есть ограничения по времени. Каждые 16мс. интерфейс перерисовывается (рис.2).
-![[Pasted image 20240903202540.png]]
+![Pasted image 20240903202540](https://github.com/user-attachments/assets/e1948da3-6cf8-4ea9-a4ef-2aff6e0a9666)
 [Рисунок 2](https://yandex.ru/video/preview/8830654701698806592?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024) - Отрисовка UI
 Если поток будет занят другой задачей и не будет успевать отрисовывать UI, кадры будут теряться, а приложение будет тормозить(рис. 3). Если блокировка будет слишком долго, можно  словить ошибку(рис. 4).
-![[Pasted image 20240903202548.png]]
+![Pasted image 20240903202548](https://github.com/user-attachments/assets/6bc65e7c-aff8-43cc-a8c1-001bac6c0e48)
 [Рисунок 3](https://yandex.ru/video/preview/8830654701698806592?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024) - блокирующая операция
-![[Pasted image 20240903202557.png]]
 [Рисунок 4](https://yandex.ru/video/preview/8830654701698806592?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024) - слишком долгая блокировка потока.
 **Многопоточный код:**
 1. Эффективное использование ядер
@@ -243,7 +243,6 @@ suspend fun main():Unit = runBlocking{
 
 ### 2.4.3 CoroutineScope
 Нужен для того, чтобы быть входной точкой в корутины и обозначать ограничительный момент где и сколько по времени корутины могут работать (рис.5).
-![[Pasted image 20240903203918.png]]
 [Рисунок 5](https://yandex.ru/video/preview/9450652162475930810?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024) - CoroutineScope
 
 > Входная точка в корутины
@@ -290,7 +289,7 @@ suspend fun main(): Unit = coroutineScope {
 }
 ```
 Результат (рис.6):
-![[Pasted image 20240903204146.png]]
+![Uploading Pasted image 20240903204146.png…]()
 [Рисунок 6](https://yandex.ru/video/preview/9450652162475930810?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024)- Результат
 
 ### 2.4.5 Coroutine Context
@@ -321,7 +320,7 @@ val job3 = scope.launch {/*coroutine3*/}
 
 scope.cancel()
 ```
-![[Pasted image 20240903204227.png]]
+![Pasted image 20240903204227](https://github.com/user-attachments/assets/6fc51fc1-a6e3-4fc2-a200-0210dffb9a04)
 [Рисунок 7](https://yandex.ru/video/preview/9450652162475930810?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024)- отмена CoroutineScope
 ```kotlin
 val scope = CoroutineScope(context)
@@ -332,7 +331,8 @@ val job3 = scope.launch {/*coroutine3*/}
 
 job2.cancel()
 ```
-![[Pasted image 20240903204237.png]]
+![Uploading Pasted image 20240903204237.png…]()
+
 [Рисунок 8](https://yandex.ru/video/preview/9450652162475930810?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024)- отмена job
 
 **При отмене корутин:**
