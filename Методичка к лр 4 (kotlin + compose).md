@@ -243,6 +243,7 @@ suspend fun main():Unit = runBlocking{
 
 ### 2.4.3 CoroutineScope
 Нужен для того, чтобы быть входной точкой в корутины и обозначать ограничительный момент где и сколько по времени корутины могут работать (рис.5).
+![Pasted image 20240903203918](https://github.com/user-attachments/assets/7fa1e24a-9e2c-4c5a-a4e3-96c672e4043a)
 [Рисунок 5](https://yandex.ru/video/preview/9450652162475930810?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024) - CoroutineScope
 
 > Входная точка в корутины
@@ -289,7 +290,7 @@ suspend fun main(): Unit = coroutineScope {
 }
 ```
 Результат (рис.6):
-![Uploading Pasted image 20240903204146.png…]()
+![Pasted image 20240903204139](https://github.com/user-attachments/assets/ec27fbc5-2ca3-4571-afa1-e661d46702ba)
 [Рисунок 6](https://yandex.ru/video/preview/9450652162475930810?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024)- Результат
 
 ### 2.4.5 Coroutine Context
@@ -331,8 +332,7 @@ val job3 = scope.launch {/*coroutine3*/}
 
 job2.cancel()
 ```
-![Uploading Pasted image 20240903204237.png…]()
-
+![Pasted image 20240903204237](https://github.com/user-attachments/assets/0cac0cef-13fa-4bb9-86a3-8854afa5cc21)
 [Рисунок 8](https://yandex.ru/video/preview/9450652162475930810?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024)- отмена job
 
 **При отмене корутин:**
