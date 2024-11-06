@@ -2,7 +2,8 @@
 В этой методичке мы познакомимся с хранением данных в ваших приложениях на `Android`. 
 # 1. Способы хранения информации в `Android` приложениях
 Есть несколько типов хранилищ (рис.1).
-![[Pasted image 20240904174449.png]]
+![Pasted image 20240904174449](https://github.com/user-attachments/assets/b0355e79-3bf3-491a-9159-a5b28b2b249f)
+
 Рисунок 1 - Типы хринилищ.
 Первые два типа в этой методичке рассматриваться не будут. Про них можно узнать  в лекции про хранение данных `ШМР Яндекс 2024`
 Рассмотрим хранение данных в базах данных.
@@ -147,7 +148,7 @@ var groups=db.groupDao().getAllGroup().asLiveData().observe(this){
 > [!NOTE] Важно
 > Для того, чтобы не блокировать UI поток, будем использовать корутину
 
-[[Методичка к лр 4 (kotlin + compose)#^cedf88|Подробнее про могопоточность]]
+[Методичка к лр 4 (kotlin + compose)](https://github.com/Kulishov-Ilua/MD-training-manual/blob/main/Методичка%20к%20лр%204%20(kotlin%20%2B%20compose).md)
 
 ```kotlin
 val coroutineScope = CoroutineScope(Dispatchers.IO)//Dispatchers.IO указывает, что эта сопрограмма должна выполняться в потоке, предназначенном для операций ввода-вывода.  
@@ -201,4 +202,4 @@ Box(Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
 ```
 
 Подробнее про `Room` в лекции про хранение данных `ШМР Яндекс 2024`
-Поробнее про [[Методичка к лр 3 (kotlin + compose)#^36243b|LazyColumn()]]
+Поробнее про [Методичка к лр 3 (kotlin + compose)](https://github.com/Kulishov-Ilua/MD-training-manual/blob/main/Методичка%20к%20лр%203%20(kotlin%20%2B%20compose).md)
