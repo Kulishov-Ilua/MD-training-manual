@@ -114,14 +114,14 @@ fun main() {
 В `Android` приложение живет в одном или более процессах, каждый из которых содержит основной поток `Main thread`. Только он отвечает за отрисовку `UI`. Помимо этого, он отвечает за обработку пользовательских действий, и запуск основных компонентов (рис.1).
 ![Pasted image 20240903202531](https://github.com/user-attachments/assets/7a6085c7-bfe2-4b57-bc59-34ad2c92b62c)
 
-[Рисунок 1](https://yandex.ru/video/preview/8830654701698806592?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024) - Main Thread 
+[Рисунок 1](подробнее в лекции про многопоточность ШМР 2024 яндекс)  - Main Thread 
 Помимо этого, основной поток может выполнять и другие задачи, но есть ограничения по времени. Каждые 16мс. интерфейс перерисовывается (рис.2).
 ![Pasted image 20240903202540](https://github.com/user-attachments/assets/e1948da3-6cf8-4ea9-a4ef-2aff6e0a9666)
-[Рисунок 2](https://yandex.ru/video/preview/8830654701698806592?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024) - Отрисовка UI
+[Рисунок 2](подробнее в лекции про многопоточность ШМР 2024 яндекс) - Отрисовка UI
 Если поток будет занят другой задачей и не будет успевать отрисовывать UI, кадры будут теряться, а приложение будет тормозить(рис. 3). Если блокировка будет слишком долго, можно  словить ошибку(рис. 4).
 ![Pasted image 20240903202548](https://github.com/user-attachments/assets/6bc65e7c-aff8-43cc-a8c1-001bac6c0e48)
-[Рисунок 3](https://yandex.ru/video/preview/8830654701698806592?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024) - блокирующая операция
-[Рисунок 4](https://yandex.ru/video/preview/8830654701698806592?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024) - слишком долгая блокировка потока.
+[Рисунок 3](подробнее в лекции про многопоточность ШМР 2024 яндекс) - блокирующая операция
+[Рисунок 4](подробнее в лекции про многопоточность ШМР 2024 яндекс) - слишком долгая блокировка потока.
 **Многопоточный код:**
 1. Эффективное использование ядер
 2. Отзывчивость
@@ -169,7 +169,7 @@ fun main() {
 	println("end of main")
 }
 ```
-[Многопоточность ШМР2024](https://yandex.ru/video/preview/8830654701698806592?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024)
+[Многопоточность ШМР2024](подробнее в лекции про многопоточность ШМР 2024 яндекс)
 [[Многопоточность (ШМР 2024)]]
 ## 2.4 Корутины
 `Корутины(сопрограммы)` - это экземпляры приостанавливаемых вычислений
@@ -244,7 +244,7 @@ suspend fun main():Unit = runBlocking{
 ### 2.4.3 CoroutineScope
 Нужен для того, чтобы быть входной точкой в корутины и обозначать ограничительный момент где и сколько по времени корутины могут работать (рис.5).
 ![Pasted image 20240903203918](https://github.com/user-attachments/assets/7fa1e24a-9e2c-4c5a-a4e3-96c672e4043a)
-[Рисунок 5](https://yandex.ru/video/preview/9450652162475930810?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024) - CoroutineScope
+[Рисунок 5](подробнее в лекции про многопоточность ШМР 2024 яндекс) - CoroutineScope
 
 > Входная точка в корутины
 
@@ -291,7 +291,7 @@ suspend fun main(): Unit = coroutineScope {
 ```
 Результат (рис.6):
 ![Pasted image 20240903204139](https://github.com/user-attachments/assets/ec27fbc5-2ca3-4571-afa1-e661d46702ba)
-[Рисунок 6](https://yandex.ru/video/preview/9450652162475930810?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024)- Результат
+[Рисунок 6](подробнее в лекции про многопоточность ШМР 2024 яндекс)- Результат
 
 ### 2.4.5 Coroutine Context
 
@@ -322,7 +322,7 @@ val job3 = scope.launch {/*coroutine3*/}
 scope.cancel()
 ```
 ![Pasted image 20240903204227](https://github.com/user-attachments/assets/6fc51fc1-a6e3-4fc2-a200-0210dffb9a04)
-[Рисунок 7](https://yandex.ru/video/preview/9450652162475930810?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024)- отмена CoroutineScope
+[Рисунок 7](подробнее в лекции про многопоточность ШМР 2024 яндекс)- отмена CoroutineScope
 ```kotlin
 val scope = CoroutineScope(context)
 
@@ -333,7 +333,7 @@ val job3 = scope.launch {/*coroutine3*/}
 job2.cancel()
 ```
 ![Pasted image 20240903204237](https://github.com/user-attachments/assets/0cac0cef-13fa-4bb9-86a3-8854afa5cc21)
-[Рисунок 8](https://yandex.ru/video/preview/9450652162475930810?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024)- отмена job
+[Рисунок 8](подробнее в лекции про многопоточность ШМР 2024 яндекс)- отмена job
 
 **При отмене корутин:**
 
@@ -386,7 +386,7 @@ val job = launch {
 
 job.cancel()
 ```
-[Корутины ШМР2024](https://yandex.ru/video/preview/9450652162475930810?from=tabbar&parent-reqid=1729025307360672-14417298636071586710-balancer-l7leveler-kubr-yp-vla-9-BAL&text=шмр+яндекс+2024)
+[Корутины ШМР2024](подробнее в лекции про многопоточность ШМР 2024 яндекс)
 [[Корутины (ШМР 2024)]]
 # 3. Retrofit
 `Retrofit` — это библиотека, которая упрощает работу с сетевыми запросами в приложениях на Android. Например, с этим инструментом можно настроить работу приложения с погодой. Разработчик задаёт параметры запросов, которые должны поступать на сервер и забирать данные по температуре в разных городах. Всё остальное происходит автоматически. В итоге пользователь видит актуальные данные каждый раз, когда открывает приложение.
@@ -471,7 +471,7 @@ retrofitRequest(
 [Retrofit](https://github.com/square/retrofit)
 [Больше про Retrofit](https://practicum.yandex.ru/blog/retrofit-na-android/)
 [Ещё статейка](https://habr.com/ru/articles/520544/)
-[Network ШМР 2024](https://www.youtube.com/live/hocpaSjrS84?si=gAZzEvRoWpeyFaV9)
+[Network ШМР 2024](подробнее в лекции про многопоточность ШМР 2024 яндекс)
 [[Network (ШМР 2024)#^3b7096]]
 # 4. OKHTTP
 OkHttp — библиотека и по совместительству HTTP‑клиент с открытым исходным кодом для Java и Kotlin, разработанная Square, которая также создала Retrofit.
